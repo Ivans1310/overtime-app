@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
-    def home
-        head :ok #
+    def index
+        #head :ok #
+       
     end
 end

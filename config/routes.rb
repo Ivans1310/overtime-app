@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   resources :posts
-  devise_for :users
-  root to: 'static#home'
+  devise_for :users, skip: [:registrations]
+  root to: 'static#index'
 end
