@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates_presence_of :first_name, :last_name       
 
+  def full_name
+    "#{last_name.upcase}, #{first_name.upcase}"    
+  end
   def sign_in_count
 
   end

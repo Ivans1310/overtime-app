@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  before do ## This blpock will run in every one sogle test
+    @user = User.create(email:"Test@test.com", password:"asdfasdf", password_confirmation:"asdfasdf", first_name:'Ivan', last_name:'Sanchez') 
+  end
   describe "Creation" do
-    before do ## This blpock will run in every one sogle test
-      @user = User.create(email:"Test@test.com", password:"asdfasdf", password_confirmation:"asdfasdf", first_name:'test fisrt Name', last_name:'test last name') 
-      
-    end
     it "can be created" do
       expect(@user).to be_valid
     end
@@ -16,4 +15,11 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "Custom name method" do
+    it "should create a full name combining the fisrt name with the last name"do
+      expect(@user.full_name).to eq('SANCHEZ, IVAN')  
+    end
+  end
+
 end
+  
