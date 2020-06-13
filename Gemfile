@@ -26,7 +26,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'rubocop'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'bootstrap-sass'
+
+gem 'jquery-rails'
 
 gem "administrate" , github: 'thoughtbot/administrate'
 gem 'bourbon'
